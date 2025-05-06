@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1f1c2c, #928dab), url("./online games.jpg") no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .first-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 42px;
+      margin-bottom: 35px;
+      text-align: center;
+      background: linear-gradient(to right, #00f260, #0575e6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+      letter-spacing: 2px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .form-div {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 25px;
+      padding: 35px 30px;
+      width: 100%;
+      max-width: 420px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .form-div:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
+    }
+
+    .form-div h2 {
+      color: #00ffd5;
+      margin-bottom: 25px;
+      text-align: center;
+      font-size: 28px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .form-div input[type="text"],
+    .form-div input[type="password"],
+    .form-div input[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      margin: 14px 0;
+      border: none;
+      border-radius: 14px;
+      font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.95);
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    .form-div input[type="text"]:focus,
+    .form-div input[type="password"]:focus {
+      outline: none;
+      box-shadow: 0 0 14px #00ffd5;
+      transform: scale(1.02);
+    }
+
+    .form-div input[type="submit"] {
+      background-image: linear-gradient(to right, #6c5ce7, #00b894);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-position 0.4s ease, transform 0.3s ease;
+      background-size: 200% auto;
+    }
+
+    .form-div input[type="submit"]:hover {
+      background-position: right center;
+      transform: scale(1.05);
+    }
+
+    .form-div p {
+      text-align: center;
+      color: #ecf0f1;
+      margin-top: 12px;
+    }
+
+    .form-div a {
+      color: #f1c40f;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .form-div a:hover {
+      text-decoration: underline;
+      color: #ffeaa7;
+    }
+
+    #play-button {
+      display: none;
+      margin-top: 25px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    #play-id {
+      padding: 14px 32px;
+      font-size: 20px;
+      background-image: linear-gradient(to right, #e67e22, #f39c12);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    #play-id:hover {
+      background-image: linear-gradient(to right, #2ecc71, #27ae60);
+      transform: scale(1.07);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .form-div {
+        padding: 25px;
+      }
+
+      #play-id {
+        font-size: 18px;
+        padding: 12px 24px;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="first-container">
+    <h1>WELCOME TO ONLINE GAMES</h1>
+
+    <!-- Login Form -->
+    <div class="button-div form-div" id="login-form">
+      <h2>Log In</h2>
+      <form id="login" onsubmit="logIn(event)">
+        <input type="text" id="login-username" name="username" placeholder="Username" required />
+        <input type="password" id="login-password" name="password" placeholder="Password" required />
+        <input type="submit" value="Log In" />
+      </form>
+      <p><a onclick="toggleForm('register')">Create an account</a></p>
+    </div>
+
+    <!-- Register Form -->
+    <div class="button-div form-div" id="register-form" style="display: none;">
+      <h2>Register</h2>
+      <form id="register" onsubmit="registerUser(event)">
+        <input type="text" id="reg-username" name="username" placeholder="Username" required />
+        <input type="password" id="reg-password" name="password" placeholder="Password" required />
+        <input type="submit" value="Register" />
+      </form>
+      <p><a onclick="toggleForm('login')">Already have an account? Log in</a></p>
+    </div>
+
+    <!-- Play Button -->
+    <div id="play-button" class="button-div">
+      <a href="SecondHomepage.html"><button id="play-id">LET'S PLAY</button></a>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm(formType) {
+      document.getElementById('login-form').style.display = formType === 'login' ? 'block' : 'none';
+      document.getElementById('register-form').style.display = formType === 'register' ? 'block' : 'none';
+    }
+
+    function getUsers() {
+      return JSON.parse(localStorage.getItem("users")) || [];
+    }
+
+    function saveUsers(users) {
+      localStorage.setItem("users", JSON.stringify(users));
+    }
+
+    function registerUser(event) {
+      event.preventDefault();
+      const username = document.getElementById("reg-username").value.trim();
+      const password = document.getElementById("reg-password").value.trim();
+
+      if (!username || !password) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      let users = getUsers();
+
+      if (users.some(user => user.username.toLowerCase() === username.toLowerCase())) {
+        alert("Username already exists. Try another one.");
+        return;
+      }
+
+      users.push({ username, password });
+      saveUsers(users);
+
+      alert("Registration successful! Please log in.");
+      toggleForm('login');
+    }
+
+    function logIn(event) {
+      event.preventDefault();
+      const username = document.getElementById("login-username").value.trim();
+      const password = document.getElementById("login-password").value.trim();
+
+      if (!username || !password) {
+        alert("Please enter username and password.");
+        return;
+      }
+
+      const users = getUsers();
+
+      const user = users.find(user => user.username === username && user.password === password);
+
+      if (user) {
+        alert("Login Successful!");
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'none';
+        document.getElementById('play-button').style.display = 'block';
+      } else {
+        alert("Invalid credentials. Please try again.");
+      }
+    }
+  </script>
+</body>
+
+</html>
