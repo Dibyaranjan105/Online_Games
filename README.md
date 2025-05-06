@@ -1,6 +1,8 @@
 # Online_Games
-Three games are there a)QUIZ GAME b)SNAKE GAME c)TIC-TAC-TOE
+Three games are there   a)QUIZ GAME   b)SNAKE GAME      c)TIC-TAC-TOE
+
 Technologies used: HTML5, CSS, JavaScript, VSCode
+
 HOME PAGE:
 ![Screenshot 2025-05-06 115117](https://github.com/user-attachments/assets/cd62f71b-e71d-4b99-98ef-73cc8dae3622)
 
